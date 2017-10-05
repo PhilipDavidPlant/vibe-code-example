@@ -25,6 +25,9 @@ class PortsController {
                 //First get data from model service
                 //In a fully fleshed backend this wouldn't be a simple function call but will do for demo
                 $portsList = modelService::getPortsList();
+                foreach($list as $listItem){
+                    $listItem['connectionSpeed'] = rand(1,200);
+                }
                 $transformedData = DomainService::randomiseConnectionSpeed($portsList);
                 http_response_code(200);
                 return $transformedData;
