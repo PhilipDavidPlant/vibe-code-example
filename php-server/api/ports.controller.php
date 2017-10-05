@@ -30,7 +30,7 @@ class PortsController {
                     $listItem['connectionSpeed'] = ConnectionSpeedService::randomiseConnectionSpeed($portsList);
                 }
                 http_response_code(200);
-                return json_encode($portsList;
+                return json_encode($portsList);
 
             }else{
                 http_response_code(403);
@@ -55,8 +55,8 @@ class PortsController {
 //Initilise Controller
 $controller = new PortsController;
 //Get Request Type
-$requestCommand = $_POST["command"];
-$requestOptions = $_POST["options"];
+$requestCommand = $_GET["command"];
+$requestOptions = $_GET["options"];
 //Call Request and Echo Result
 $response = array();
 
