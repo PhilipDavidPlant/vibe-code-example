@@ -24,12 +24,13 @@ class PortsController {
             if(authorisationService::isAuthorised('list','ports')){
                 //First get data from model service
                 //In a fully fleshed backend this wouldn't be a simple function call but will do for demo
-                $portsList = modelService::getPortsList();
-                foreach($list as $listItem){
-                    $portsList['connectionSpeed'] = ConnectionSpeedService::randomiseConnectionSpeed($portsList);
+                $portsJson = modelService::getPortsList();
+                $portsArray = json_decode($portsJson);
+                foreach($portsArray as $listItem){
+                    $listItem['connectionSpeed'] = ConnectionSpeedService::randomiseConnectionSpeed($portsList);
                 }
                 http_response_code(200);
-                return $portsList;
+                return json_encode($portsList;
 
             }else{
                 http_response_code(403);
