@@ -1,7 +1,7 @@
 <?php
 
 class AuthenticationService{
-    static $isLoggedIn = true;
+    public static $isLoggedIn = true;
 }
 
 ?>
