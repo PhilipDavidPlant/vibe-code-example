@@ -1,0 +1,77 @@
+.bar-container{
+    width:100%;
+    height:90px;
+    background: #E57661;
+    position:fixed;
+}
+
+.bar-container *{
+    color:white;
+}
+
+.logo{
+    width:50px;
+    height:50px;
+    padding:15px;
+}
+
+.bar-title{
+    display: inline-block;
+    text-transform:uppercase;
+    font-weight:900;
+    font-size: 25px;    
+    line-height: 90px;
+    position: absolute;
+}
+
+.bar-title > .thin-portion{
+    font-weight: 100;
+}
+
+mat-sidenav {
+    width: 100%;
+    background:#86DDB2;
+    height:100%;
+}
+
+.material-icons{
+    font-size:45px;    
+}
+
+.sidebar-links{
+    padding-top:90px;
+}
+
+.sidebar-links li{
+    width:100%;
+    height:20px;
+}
+
+.sidebar-links li:nth-last-of-type(1){background:#F8E7A2;}
+.sidebar-links li:nth-last-of-type(2){background:#F8C58C;}
+.sidebar-links li:nth-last-of-type(3){background:#E57661;}
+.sidebar-links li:nth-last-of-type(3){background:#7B2A3B;}
+
+.menu-button{
+    position: fixed;
+    right: 0;
+    top:0;
+    height: 90px;
+    background:none;
+    color:white;
+}
+
+.sidenav-content{
+    height:100vh;
+}
+
+@media (max-height: 680px), screen and (orientation: landscape) {
+    .bar-title{
+        font-size: 35px;
+    }
+    .logo{
+        width:70px;
+        height:70px;
+        padding:10px;
+    }
+}

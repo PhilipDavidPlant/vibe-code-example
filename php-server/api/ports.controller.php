@@ -57,9 +57,9 @@ class PortsController {
 //Initilise Controller
 $controller = new PortsController;
 //Get Request Type
-if(isset($_POST["command"]) && isset($_POST["options"])){
-    $requestCommand = $_POST["command"];
-    $requestOptions = $_POST["options"];
+if(isset($_GET["command"]) && isset($_GET["options"])){
+    $requestCommand = $_GET["command"];
+    $requestOptions = $_GET["options"];
 }else{
     http_response_code(400);
 }
