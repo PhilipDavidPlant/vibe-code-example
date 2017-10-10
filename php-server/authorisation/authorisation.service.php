@@ -3,9 +3,9 @@
 class AuthorisationService {
 
     static function isAuthorised($command, $domain){
-        return false;
+        return true;
     }
 
 }
 
-?>
+?>      

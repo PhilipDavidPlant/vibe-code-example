@@ -27,8 +27,10 @@ class PortsController {
                 //In a fully fleshed backend this wouldn't be a simple function call but will do for demo
                 $portsArray = ModelService::getPortsList();
 
-                for($i = 0, $size = count($portsArray); $i < $size; $i++){
-                    $portsArray[$i]["connectionSpeed"] = ConnectionSpeedService::randomiseConnectionSpeed();
+                //Randomise the connection speed of 
+                for($i = 0, $size = rand(1,2); $i < $size; $i++){
+                    $randomSeed = ConnectionSpeedService::pickRandomItem(count($portsArray));
+                    $portsArray[$randomSeed]["amount"] += ConnectionSpeedService::randomiseConnectionSpeed();
                 }
 
                 http_response_code(200);
@@ -62,6 +64,7 @@ if(isset($_GET["command"]) && isset($_GET["options"])){
     $requestOptions = $_GET["options"];
 }else{
     http_response_code(400);
+    die;
 }
 //Call Request and Echo Result
 $response = array();
@@ -74,6 +77,6 @@ if(is_callable($callPayload)){
 }
 
 $ResponseJSON = json_encode($response);
-echo "<pre>" . $ResponseJSON . "</pre>";
+echo $ResponseJSON;
 
 ?>
